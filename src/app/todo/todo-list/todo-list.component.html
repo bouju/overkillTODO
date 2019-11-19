@@ -1,0 +1,32 @@
+<div fxlayout="row">
+  <div>
+    <button mat-raised-button color="primary">new Todo</button>
+  </div>
+</div>
+<hr>
+<div fxLayout="row"
+  *ngFor="let todoElement of (todos | async ).todos">
+  <app-todo-item
+  [todo]="todoElement"></app-todo-item>
+</div>
+
+
+
+
+<!-- <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success">New Todo</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12" *ngFor="let todoElement of todos | isDone : false">
+      <app-todo-item
+      [todo]="todoElement"></app-todo-item>
+    </div>
+    <div class="col-xs-12 crossedOut" *ngFor="let todoElement of todos | isDone : true">
+      <app-todo-item
+      [todo]="todoElement"></app-todo-item>
+    </div>
+  </div>
+ -->
