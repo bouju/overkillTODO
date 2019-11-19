@@ -10,7 +10,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './shared/data.service';
 
 import { StoreModule } from '@ngrx/store';
-import { todoListReducer } from './store/todo-list.reducer';
+import { todoListReducer } from './todo/todo-list/store/todo-list.reducer';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoComponent } from './todo/todo.component';
@@ -22,9 +22,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { TodoItemComponent } from './todo/todo-list/todo-item/todo-item.component';
 import { IsDonePipe } from './shared/is-done.pipe';
+import { TodoDetailComponent } from './todo/todo-detail/todo-detail.component';
+import { TodoStartComponent } from './todo/todo-start/todo-start.component';
 
 
 
@@ -37,7 +41,9 @@ import { IsDonePipe } from './shared/is-done.pipe';
     TodoListComponent,
     HeaderComponent,
     TodoItemComponent,
-    IsDonePipe
+    IsDonePipe,
+    TodoDetailComponent,
+    TodoStartComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,9 @@ import { IsDonePipe } from './shared/is-done.pipe';
     MatGridListModule,
     MatButtonModule,
     MatCardModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

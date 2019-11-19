@@ -1,0 +1,8 @@
+.todo-detail-card {
+  display: flex;
+  min-width: 600px;
+}
+
+p {
+ max-width: 500px;
+}

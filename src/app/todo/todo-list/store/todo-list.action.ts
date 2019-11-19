@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Todo } from '../shared/todo.model';
+import { Todo } from '../../../shared/todo.model';
 
 export const ADD_TODO = 'ADD_TODO';
 export const ADD_TODOS = 'ADD_TODOS';
@@ -24,14 +24,6 @@ export class UpdateStateOfDo implements Action {
 
 }
 
-export type TodoListActions =
- | AddTodo
+export type TodoListActions = AddTodo
  | AddTodos
  | UpdateStateOfDo;
-
-/* export const GET_TODOLIST = 'GET_TODOLIST';
-
-export class GetTodoList implements Action {
-  readonly type = GET_TODOLIST;
-  payload: Todo;
-} */

@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Todo } from 'src/app/shared/todo.model';
 import { Store } from '@ngrx/store';
 
-import * as TodoListAction from '../../../store/todo-list.action';
+import * as TodoListAction from '../store/todo-list.action';
+import * as fromApp from '../../../store/app.reducer';
 
 @Component({
   selector: 'app-todo-item',
@@ -13,7 +14,7 @@ export class TodoItemComponent implements OnInit {
 
   @Input() todo: Todo;
 
-  constructor(private store: Store<{todoList: { todos: Todo[]}}>) { }
+  constructor(private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
   }

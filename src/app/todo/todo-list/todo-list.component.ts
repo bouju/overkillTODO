@@ -3,6 +3,8 @@ import { Store } from '@ngrx/store';
 import { Todo } from 'src/app/shared/todo.model';
 import { Observable } from 'rxjs';
 
+import * as fromApp from '../../store/app.reducer';
+
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -12,7 +14,7 @@ export class TodoListComponent implements OnInit {
 
   todos: Observable<{todos: Todo[]}>;
 
-  constructor(private store: Store<{todoList: { todos: Todo[]}}>) { }
+  constructor(private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
     this.todos = this.store.select('todoList');

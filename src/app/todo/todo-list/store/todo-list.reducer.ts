@@ -1,14 +1,18 @@
 import { Todo } from 'src/app/shared/todo.model';
 import { Action } from '@ngrx/store';
 import * as TodoListAction from './todo-list.action';
-import { stat } from 'fs';
 
-const initialState = {
+
+export interface State {
+  todos: Todo[];
+}
+
+const initialState: State = {
   todos: Array<Todo>()
 };
 
 export function todoListReducer(
-  state = initialState,
+  state: State = initialState,
   action: TodoListAction.TodoListActions
 ) {
   switch (action.type) {

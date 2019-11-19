@@ -1,0 +1,11 @@
+<mat-card class="todo-detail-card" fxLayout="column">
+    <mat-card-title>
+      {{ todo.title }}
+    </mat-card-title>
+    <mat-card-subtitle>{{ todo.stateOfDo ? 'Done' : 'To do' }}</mat-card-subtitle>
+    <mat-card-content>
+      <p>
+        {{ todo.description }}
+      </p>
+    </mat-card-content>
+  </mat-card>

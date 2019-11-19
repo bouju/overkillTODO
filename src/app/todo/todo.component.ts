@@ -3,7 +3,8 @@ import { Store } from '@ngrx/store';
 import { Todo } from '../shared/todo.model';
 import { TodoService } from '../shared/todo.service';
 
-import * as TodoListAction from '../store/todo-list.action';
+import * as TodoListAction from './todo-list/store/todo-list.action';
+import * as fromApp from '../store/app.reducer';
 
 @Component({
   selector: 'app-todo',
@@ -12,7 +13,9 @@ import * as TodoListAction from '../store/todo-list.action';
 })
 export class TodoComponent implements OnInit {
 
-  constructor(private todoServ: TodoService, private store: Store<{todoList: { todos: Todo[]}}>) { }
+  constructor(private todoServ: TodoService,
+              private store: Store<fromApp.AppState>
+  ) { }
 
   ngOnInit() {
     this.todoServ.getTodos().subscribe((data: Todo[]) => {

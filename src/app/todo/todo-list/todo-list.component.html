@@ -1,35 +1,9 @@
-<div fxlayout="row">
-  <div>
+<mat-list fxLayout="column" fxLayoutGap="30px">
     <button mat-raised-button color="primary">new Todo</button>
-  </div>
-</div>
-<hr>
-<div fxLayout="row"
-  *ngFor="let todoElement of (todos | async ).todos | isDone : false">
-  <app-todo-item [todo]="todoElement"></app-todo-item>
-</div>
-<div fxLayout="row"
-  *ngFor="let todoElement of (todos | async ).todos | isDone : true">
-  <app-todo-item [todo]="todoElement"></app-todo-item>
-</div>
-
-
-
-
-<!-- <div class="row">
-    <div class="col-xs-12">
-      <button class="btn btn-success">New Todo</button>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-xs-12" *ngFor="let todoElement of todos | isDone : false">
-      <app-todo-item
-      [todo]="todoElement"></app-todo-item>
-    </div>
-    <div class="col-xs-12 crossedOut" *ngFor="let todoElement of todos | isDone : true">
-      <app-todo-item
-      [todo]="todoElement"></app-todo-item>
-    </div>
-  </div>
- -->
+    <mat-list-item *ngFor="let todoElement of (todos | async ).todos | isDone : false">
+        <app-todo-item [todo]="todoElement"></app-todo-item>
+    </mat-list-item>
+    <mat-list-item *ngFor="let todoElement of (todos | async ).todos | isDone : true">
+        <app-todo-item [todo]="todoElement"></app-todo-item>
+    </mat-list-item>
+</mat-list>

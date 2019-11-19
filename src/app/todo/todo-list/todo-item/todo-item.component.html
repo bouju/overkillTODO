@@ -1,5 +1,9 @@
 <mat-card class="todo-item-card">
-    <mat-card-title [ngStyle]="{'text-decoration': todo.stateOfDo ? 'line-through' : ''}">
+    <mat-card-title
+      [ngStyle]="{'text-decoration': todo.stateOfDo ? 'line-through' : ''}"
+      style="cursor: pointer"
+      [routerLink]="[todo.id]"
+      routerLinkActive="active">
       {{ todo.title }}
     </mat-card-title>
     <mat-card-title>

@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+}
+
+.todo-list {
+  flex: 1;
+}
+
+.todo-detail {
+  flex: 1;
+}
