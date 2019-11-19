@@ -15,10 +15,8 @@ export class TodoComponent implements OnInit {
   constructor(private todoServ: TodoService, private store: Store<{todoList: { todos: Todo[]}}>) { }
 
   ngOnInit() {
-    this.todoServ.getTodos().subscribe((Todos: Todo[]) => {
-      Todos.forEach((todo: Todo) => {
-        this.store.dispatch( new TodoListAction.AddTodo(todo));
-      });
+    this.todoServ.getTodos().subscribe((data: Todo[]) => {
+        this.store.dispatch( new TodoListAction.AddTodos(data));
     });
   }
 

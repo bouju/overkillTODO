@@ -24,6 +24,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { TodoItemComponent } from './todo/todo-list/todo-item/todo-item.component';
+import { IsDonePipe } from './shared/is-done.pipe';
 
 
 
@@ -35,7 +36,8 @@ import { TodoItemComponent } from './todo/todo-list/todo-item/todo-item.componen
     TodoComponent,
     TodoListComponent,
     HeaderComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    IsDonePipe
   ],
   imports: [
     BrowserModule,

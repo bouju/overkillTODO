@@ -1,11 +1,13 @@
 <mat-card class="todo-item-card">
-    <mat-card-title >
+    <mat-card-title [ngStyle]="{'text-decoration': todo.stateOfDo ? 'line-through' : ''}">
       {{ todo.title }}
     </mat-card-title>
     <mat-card-title>
         <mat-slide-toggle
         class="todo-slide"
-        [checked]="todo.stateOfDo">
+        [checked]="todo.stateOfDo"
+        (change)="onChange()"
+        >
           {{ todo.stateOfDo ? 'Done' : 'To do' }}
         </mat-slide-toggle>
     </mat-card-title>
