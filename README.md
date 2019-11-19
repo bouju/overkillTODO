@@ -49,7 +49,3 @@ You're working in the WebFactory team, which provides the following technical gu
 ## Bonus
 You can add any new functionality in this wonderful project if you want to, in order to satisfy your PO 😉  
 
-
-un etat
-un titre
-descritpion (optionel)
