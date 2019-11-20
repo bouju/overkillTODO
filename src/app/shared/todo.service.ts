@@ -7,7 +7,8 @@ import { Todo } from './todo.model';
 })
 export class TodoService {
 
-  SERVER_URL = 'http://localhost:8080/api/';
+  SERVER_URL = 'https://bouju.github.io/overkillTODO:8080/api/';
+
 
 
   constructor(private httpClient: HttpClient) { }
