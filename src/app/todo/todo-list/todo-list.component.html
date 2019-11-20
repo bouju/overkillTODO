@@ -1,9 +1,9 @@
 <mat-list fxLayout="column" fxLayoutGap="30px">
-    <button mat-raised-button color="primary">new Todo</button>
-    <mat-list-item *ngFor="let todoElement of (todos | async ).todos | isDone : false">
+    <button mat-raised-button color="primary" (click)="onNewTodo()">new Todo</button>
+    <mat-list-item *ngFor="let todoElement of (todos | async ).todos.slice().reverse() | isDone : false">
         <app-todo-item [todo]="todoElement"></app-todo-item>
     </mat-list-item>
-    <mat-list-item *ngFor="let todoElement of (todos | async ).todos | isDone : true">
+    <mat-list-item *ngFor="let todoElement of (todos | async ).todos.slice().reverse() | isDone : true">
         <app-todo-item [todo]="todoElement"></app-todo-item>
     </mat-list-item>
 </mat-list>

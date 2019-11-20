@@ -1,0 +1,9 @@
+.todo-edit-component {
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+}
+
+.todo-edit-component > * {
+  width: 100%;
+}

@@ -1,5 +1,5 @@
-<mat-card class="todo-detail-card" fxLayout="column">
-    <mat-card-title>
+<mat-card class="todo-detail-card" fxLayout="column" *ngIf="todo">
+    <mat-card-title [ngStyle]="{'text-decoration': todo.stateOfDo ? 'line-through' : ''}">
       {{ todo.title }}
     </mat-card-title>
     <mat-card-subtitle>{{ todo.stateOfDo ? 'Done' : 'To do' }}</mat-card-subtitle>

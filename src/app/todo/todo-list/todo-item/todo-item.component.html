@@ -1,11 +1,18 @@
 <mat-card class="todo-item-card">
-    <mat-card-title
+    <a mat-stroked-button
+      [ngStyle]="{'text-decoration': todo.stateOfDo ? 'line-through' : ''}"
+      style="cursor: pointer"
+      [routerLink]="[todo.id]"
+      routerLinkActive="active">
+        {{ todo.title }}
+    </a>
+<!--     <mat-card-title
       [ngStyle]="{'text-decoration': todo.stateOfDo ? 'line-through' : ''}"
       style="cursor: pointer"
       [routerLink]="[todo.id]"
       routerLinkActive="active">
       {{ todo.title }}
-    </mat-card-title>
+    </mat-card-title> -->
     <mat-card-title>
         <mat-slide-toggle
         class="todo-slide"

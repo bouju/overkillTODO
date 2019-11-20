@@ -19,14 +19,14 @@ export class TodoService {
   public getTodo(todoId: number) {
       return this.httpClient.get(`${this.SERVER_URL + 'todos'}/${todoId}`);
   }
-  public createPolicy(todo: Todo) {
+  public createTodo(todo: Todo) {
     return this.httpClient.post(`${this.SERVER_URL + 'todos'}`, todo);
   }
 
-  public deletePolicy(todoId) {
+  public deleteTodo(todoId) {
     return this.httpClient.delete(`${this.SERVER_URL + 'todos'}/${todoId}`);
   }
-  public updatePolicy(todo: Todo) {
+  public updateTodo(todo: Todo) {
     return this.httpClient.put(`${this.SERVER_URL + 'todos'}/${todo.id}`, todo);
   }
 }

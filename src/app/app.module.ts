@@ -4,12 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './shared/data.service';
 
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { todoListReducer } from './todo/todo-list/store/todo-list.reducer';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,11 +25,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { TodoItemComponent } from './todo/todo-list/todo-item/todo-item.component';
 import { IsDonePipe } from './shared/is-done.pipe';
 import { TodoDetailComponent } from './todo/todo-detail/todo-detail.component';
 import { TodoStartComponent } from './todo/todo-start/todo-start.component';
+import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TodoEffects } from './todo/todo-list/store/todo-list.effects';
 
 
 
@@ -43,7 +49,8 @@ import { TodoStartComponent } from './todo/todo-start/todo-start.component';
     TodoItemComponent,
     IsDonePipe,
     TodoDetailComponent,
-    TodoStartComponent
+    TodoStartComponent,
+    TodoEditComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,12 @@ import { TodoStartComponent } from './todo/todo-start/todo-start.component';
     MatCardModule,
     MatSlideToggleModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    EffectsModule.forRoot([TodoEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]
